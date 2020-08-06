@@ -1,7 +1,6 @@
 {
   "projects": {
     "default": "init-project-with-reduxtoolkit",
-    "production": "init-project-prod",
-    "staging": "init-project-stg",
+    "staging": "init-project-with-reduxtoolkit",
   }
 }
