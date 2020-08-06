@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Home = () => {
-  return <>Hello Home</>
+  return <>Hello Tan</>
 }
 
 export default Home
