@@ -23,27 +23,27 @@ jobs:
       - run:
           name: 'Deploy to Firebase Hosting'
           command: './node_modules/.bin/firebase use staging && ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project=$FIREBASE_PROJECT_ID_STATING'
-    build_deploy_prod:
-      executor:
-        name: node/default
-      steps:
-        - checkout
-        - restore_cache:
-            keys:
-              - 'v1-dependencies-{{ checksum "package.json" }}'
-              - v1-dependencies-
-        - run: 'yarn install'
-        - save_cache:
-            paths:
-              - node_modules
-            key: 'v1-dependencies-{{ checksum "package.json" }}'
-        - run: 'yarn lint'
-        - run:
-            name: 'Build Project'
-            command: 'yarn build'
-        - run:
-            name: 'Deploy to Firebase Hosting'
-            command: './node_modules/.bin/firebase use production && ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project=$FIREBASE_PROJECT_ID_PRODUCT'
+  build_deploy_prod:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - 'v1-dependencies-{{ checksum "package.json" }}'
+            - v1-dependencies-
+      - run: 'yarn install'
+      - save_cache:
+          paths:
+            - node_modules
+          key: 'v1-dependencies-{{ checksum "package.json" }}'
+      - run: 'yarn lint'
+      - run:
+          name: 'Build Project'
+          command: 'yarn build'
+      - run:
+          name: 'Deploy to Firebase Hosting'
+          command: './node_modules/.bin/firebase use production && ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project=$FIREBASE_PROJECT_ID_PRODUCT'
 workflows:
   build_deploy_stg:
     jobs:
