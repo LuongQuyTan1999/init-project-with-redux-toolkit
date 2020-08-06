@@ -43,7 +43,7 @@ jobs:
             command: 'yarn build'
         - run:
             name: 'Deploy to Firebase Hosting'
-            command: './node_modules/.bin/firebase use production && ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project=$FIREBASE_PROJECT_ID_PRODUCT'
+            command: './node_modules/.bin/firebase use production && ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project=$FIREBASE_PROJECT_ID_PRODUCT '
 workflows:
   build_deploy_stg:
     jobs:
