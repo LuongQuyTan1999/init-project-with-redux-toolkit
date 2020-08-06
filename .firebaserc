@@ -1,5 +1,6 @@
 {
   "projects": {
-    "y": "init-project-with-reduxtoolkit"
+    "default": "init-project-with-reduxtoolkit",
+    "staging": "init-project-with-reduxtoolkit"
   }
 }
