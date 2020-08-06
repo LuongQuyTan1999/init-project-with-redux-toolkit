@@ -48,14 +48,12 @@ workflows:
   build_deploy_stg:
     jobs:
       - build_deploy_stg:
-          context: initProject-app-stg
           filters:
             branches:
               only: develop
   build_deploy_prod:
     jobs:
       - build_deploy_prod:
-          context: initProject-app-prod
           filters:
             branches:
               only: master
